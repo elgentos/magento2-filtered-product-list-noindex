@@ -1,0 +1,43 @@
+{
+    "name": "elgentos/magento2-product-list-noindex",
+    "description": "Make sure that filtered product list pages are not indexed by search engines.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Elgentos\\Magento2ProductListNoindex\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "magento/framework": "^103.0",
+        "magento/module-catalog": "^104.0"
+    },
+    "require-dev": {
+        "mediact/coding-standard-magento2": "@stable",
+        "mediact/testing-suite": "^2.9"
+    },
+    "repositories": {
+        "magento": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    },
+    "archive": {
+        "exclude": [
+            "/.gitignore",
+            "/grumphp.yml",
+            "/pdepend.xml",
+            "/phpstan.neon",
+            "/phpunit.xml",
+            "/phpcs.xml",
+            "/phpmd.xml",
+            "/package.json",
+            "/.eslintrc.json",
+            "/.eslintignore"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
