@@ -18,13 +18,9 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8.1",
         "magento/framework": "^103.0",
         "magento/module-catalog": "^104.0"
-    },
-    "require-dev": {
-        "mediact/coding-standard-magento2": "@stable",
-        "mediact/testing-suite": "^2.9"
     },
     "repositories": {
         "magento": {
@@ -48,6 +44,16 @@
         ]
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true,
+            "youwe/coding-standard-phpstorm": true,
+            "phpro/grumphp-shim": true,
+            "youwe/testing-suite": true
+        }
+    },
+    "require-dev": {
+        "youwe/coding-standard-magento2": "^1.7.0",
+        "youwe/testing-suite": "^2.13"
     }
 }
