@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Elgentos\FilteredProductListNoIndex\Observer;
 
+use Elgentos\FilteredProductListNoIndex\Model\Config as ModuleConfig;
 use Magento\Catalog\Block\Product\ListProduct;
 use Magento\Framework\App\Request\Http;
 use Magento\Framework\Event\Observer;
@@ -18,11 +19,11 @@ use Magento\Framework\View\Page\Config;
 
 class UpdateCategoryPageRobots implements ObserverInterface
 {
-    private const ROBOTS_VALUE = 'NOINDEX,FOLLOW';
-
     private Http $request;
 
     private Config $pageConfig;
+
+    private ModuleConfig $moduleConfig;
 
     private array $applicableActionNames = [
         'catalog_category_view',
@@ -31,10 +32,12 @@ class UpdateCategoryPageRobots implements ObserverInterface
 
     public function __construct(
         Http $request,
-        Config $pageConfig
+        Config $pageConfig,
+        ModuleConfig $moduleConfig
     ) {
-        $this->request    = $request;
-        $this->pageConfig = $pageConfig;
+        $this->request      = $request;
+        $this->pageConfig   = $pageConfig;
+        $this->moduleConfig = $moduleConfig;
     }
 
     public function execute(Observer $observer): void
@@ -60,6 +63,6 @@ class UpdateCategoryPageRobots implements ObserverInterface
             return;
         }
 
-        $this->pageConfig->setMetadata('robots', self::ROBOTS_VALUE);
+        $this->pageConfig->setMetadata('robots', $this->moduleConfig->getRobotsValue());
     }
 }
