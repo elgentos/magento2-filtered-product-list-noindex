@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Elgentos\FilteredProductListNoIndex\Tests\Observer;
 
+use Elgentos\FilteredProductListNoIndex\Model\Config as ModelConfig;
 use Magento\Catalog\Block\Product\ListProduct;
 use Magento\Catalog\Model\Layer;
 use Magento\Catalog\Model\Layer\Filter\Item;
@@ -42,7 +43,8 @@ class UpdateCategoryPageRobotsTest extends TestCase
 
         $subject = new UpdateCategoryPageRobots(
             $request,
-            $this->createMock(Config::class)
+            $this->createMock(Config::class),
+            $this->createMock(ModelConfig::class)
         );
 
         $productListBlock = $this->createMock(ListProduct::class);

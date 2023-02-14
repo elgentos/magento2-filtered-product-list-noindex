@@ -47,6 +47,7 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "magento/composer-dependency-version-audit-plugin": true,
             "youwe/coding-standard-phpstorm": true,
             "phpro/grumphp-shim": true,
@@ -54,7 +55,7 @@
         }
     },
     "require-dev": {
-        "youwe/coding-standard-magento2": "^1.7.0",
+        "youwe/coding-standard-magento2": "^2.0.0",
         "youwe/testing-suite": "^2.13"
     }
 }
