@@ -3,7 +3,8 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Elgentos_FilteredProductListNoIndex">
         <sequence>
-            <module name="Magento_Catalog" />
+            <module name="Magento_Catalog"/>
+            <module name="Magento_Config"/>
         </sequence>
     </module>
 </config>
